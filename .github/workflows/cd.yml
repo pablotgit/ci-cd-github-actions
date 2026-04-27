@@ -41,14 +41,14 @@ jobs:
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" \
             --exclude='.git' \
             --exclude='node_modules' \
-            ./ ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com:/var/www/api_devops
+            ./ ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com:/var/www/ptonelli
 
       - name: Instalar las librerias en el servidor
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com \
-            "cd /var/www/api_devops && npm install"
+            "cd /var/www/ptonelli && npm install"
 
       - name: Reiniciar PM2 correctamente
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com \
-            "pm2 restart api || pm2 start /var/www/api_devops/server.js --name api"
+            "pm2 restart api_ptonelli || pm2 start /var/www/ptonelli/server.js --name api_ptonelli"
