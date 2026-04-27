@@ -19,9 +19,11 @@ app.get("/city", (req, res) => {
     res.status(200).json({ message: "Ok", city: "Berlin"  });
 })
 
+/* Si descomento esto, se prueba la libreria slint, la cual hace fallar al workflow en el step Ejecutar Linters ya que realiza validaciones y corta porque 'foo' no esta definido
 app.get("/city", (req, res) => {
     res.status(200).json(foo);
 })
+*/
 
 app.get("/administradores", (req, res) => {
     res.status(200).json({ message: "Ok", administradores: [
