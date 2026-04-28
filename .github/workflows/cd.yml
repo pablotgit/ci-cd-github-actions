@@ -52,3 +52,8 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-164-44-255.compute-1.amazonaws.com \
             "pm2 restart api_ptonelli || pm2 start /var/www/ptonelli/server.js --name api_ptonelli"
+
+      - name: Envio notificacion de correo
+        uses: dawidd6/action-send-mail@v3
+        with: 
+          server_address: ${{ secrets.MAIL_SERVER }}
