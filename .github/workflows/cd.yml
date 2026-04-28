@@ -34,21 +34,21 @@ jobs:
 
       - name: Agregar al host conocido
         run: |
-          ssh-keyscan -H ec2-54-145-24-29.compute-1.amazonaws.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H ec2-54-164-44-255.compute-1.amazonaws.com >> ~/.ssh/known_hosts
 
       - name: Copiar archivos al EC2 con rsync
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" \
             --exclude='.git' \
             --exclude='node_modules' \
-            ./ ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com:/var/www/ptonelli
+            ./ ubuntu@ec2-54-164-44-255.compute-1.amazonaws.com:/var/www/ptonelli
 
       - name: Instalar las librerias en el servidor
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com \
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-164-44-255.compute-1.amazonaws.com \
             "cd /var/www/ptonelli && npm install"
 
       - name: Reiniciar PM2 correctamente
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-145-24-29.compute-1.amazonaws.com \
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-164-44-255.compute-1.amazonaws.com \
             "pm2 restart api_ptonelli || pm2 start /var/www/ptonelli/server.js --name api_ptonelli"
