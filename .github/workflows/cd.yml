@@ -61,7 +61,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "CI Build - ${{ github.ref }} - ${{ job.status }}"
-          to: "polivionofa@gmail.com"
+          to: "pablo.tonelli@cablasociados.com"
           from: "CI Pipeline < ${{ secrets.MAIL_USERNAME }} >"
           body: |
             Hola, 
