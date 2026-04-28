@@ -66,4 +66,4 @@ jobs:
           body: |
             Hola, 
 
-            El pipeline ha finalizado.
+            El pipeline ha finalizado
