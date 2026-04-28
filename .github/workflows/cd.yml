@@ -67,3 +67,11 @@ jobs:
             Hola, 
 
             El pipeline ha finalizado
+            Estado: ${{ job.status }} 
+            Commit: ${{ github.sha }}
+            Autor: ${{ github.actor }}
+            Rama: ${{ github.ref_name }}
+
+            Saludos,
+            CI/CD Pipeline
+
