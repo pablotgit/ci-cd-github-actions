@@ -57,13 +57,13 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with: 
           server_address: ${{ secrets.MAIL_SERVER }}
-          server_port: 567
-          secure: false
+          server_port: 465
+          secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "CI Build - ${{ github.ref }} - ${{ job.status }}"
           to: "pablo.tonelli@cablasociados.com"
-          from: "CI Pipeline < ${{ secrets.MAIL_USERNAME }} >"
+          from: "CI Pipeline <${{ secrets.MAIL_USERNAME }}>"
           body: |
             Hola, 
 
