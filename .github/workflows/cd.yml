@@ -54,7 +54,7 @@ jobs:
             "pm2 restart api_ptonelli || pm2 start /var/www/ptonelli/server.js --name api_ptonelli"
 
       - name: Envio notificacion de correo
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v17
         with: 
           server_address: ${{ secrets.MAIL_SERVER }}
           server_port: 465
