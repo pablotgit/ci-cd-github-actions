@@ -15,7 +15,7 @@ jobs:
       - name: Configurar node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.15.1
+          node-version: 24.14.0
 
       - name: Instalar dependencias
         run: npm install
