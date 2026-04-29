@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const x = 123;
+// const x = 123; Se definio esto para probar eslint solamante, ua que es una variable que no se usa en ningun lado
 
 app.get("/", (req, res) => {
     res.status(200).json({ message: "API Funcionando" });
